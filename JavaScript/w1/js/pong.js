@@ -9,11 +9,17 @@ p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
 
+var p2 = new Box()
+p2.w = 20
+p2.h = 150
+p2.x = c.width-p2.w/2
+p2.color = `blue`
+
 var ball = new Box()
 ball.w= 20
 ball.h = 20
-ball.vx = -5
-ball.vy= -3
+ball.vx = -7
+ball.vy= -4
 ball.color = `black`
 
 function main()
@@ -25,13 +31,25 @@ function main()
         p1.vy += -p1.force
     }
 
+    if(keys["ArrowUp"])
+    {
+        p2.vy += -p2.force
+    }
+
+    if(keys["ArrowDown"])
+    {
+        p2.vy += p2.force
+    }
+
     if(keys[`s`])
     {
         p1.vy += p1.force
     }
 
     p1.vy *= fy
+    p2.vy *= fy
     p1.move()
+    p2.move()
 
     ball.move()
 
@@ -44,12 +62,25 @@ function main()
         p1.y = c.height-p1.h/2
     }
 
+    if(p2.y < 0+p2.h/2)
+    {
+        p2.y = 0+p2.h/2
+    }
+    if(p2.y > c.height-p2.h/2)
+    {
+        p2.y = c.height-p2.h/2
+    }
+
     if(ball.collide(p1))
     {
         ball.x = p1.x + p1.w/2 + ball.w/2
         ball.vx = -ball.vx;
     }
-
+    if(ball.collide(p2))
+    {
+        ball.x = p2.x - p2.w/2 - ball.w/2
+        ball.vx = -ball.vx;
+    }
     if(ball.x < 0)
     {
         ball.x = c.width/2
@@ -57,8 +88,8 @@ function main()
     }
     if(ball.x > c.width)
     {
-        ball.x = c.width
-        ball.vx = -ball.vx
+        ball.x = c.width/2
+        ball.y = c.height/2
     }
     if(ball.y < 0)
     {
@@ -71,5 +102,6 @@ function main()
         ball.vy = -ball.vy
     }
     p1.draw()
+    p2.draw()
     ball.draw()
 }
