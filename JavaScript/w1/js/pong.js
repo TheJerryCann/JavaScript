@@ -112,7 +112,12 @@ function main()
         ball.vy = -ball.vy
     }
     console.log(`${player[0].score} | ${player[1].score}`)
+    var score = document.querySelectorAll(`#score div`)
     pad[0].draw()
     pad[1].draw()
     ball.draw()
+    for(i = 0; i<score.length; i++)
+    {
+        score[i].innerHTML = player[i].score
+    }
 }
