@@ -4,10 +4,15 @@ var timer = setInterval(main, 1000/60)
 
 var fy = .85
 
+var player = [new Player(), new Player()]
+player[0].pad = new Box();
+player[1].pad = new Box();
+
 var p1 = new Box();
 p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
+p1.pad 
 
 var p2 = new Box()
 p2.w = 20
@@ -21,6 +26,7 @@ ball.h = 20
 ball.vx = -7
 ball.vy= -4
 ball.color = `black`
+
 
 function main()
 {
