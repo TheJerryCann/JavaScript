@@ -9,6 +9,7 @@ player[0].pad = new Box();
 player[1].pad = new Box();
 
 console.log(player)
+//hi
 
 var p1 = new Box();
 p1.w = 20
