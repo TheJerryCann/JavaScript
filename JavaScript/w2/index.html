@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var namo = []
+        namo[0] = "Alex"
+        namo[1] = "Emma"
+        namo[2] = "Andrew"
+        namo[3] = "Danny"
+        namo[4] = "Nick"
+        console.log(namo)
+
+        var message = ``
+        for(let i=0; i<namo.length; i++)
+        {
+            document.querySelector(`body`).innerHTML += `<p>${namo[i]}</p>`
+        }
+    </script>
+    
+</body>
+</html>

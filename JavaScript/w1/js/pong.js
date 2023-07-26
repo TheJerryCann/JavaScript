@@ -93,12 +93,12 @@ function main()
     }
     if(ball.y < 0)
     {
-        ball.y = 0
+        ball.y = 0 + ball.h/2
         ball.vy = -ball.vy
     }
     if(ball.y > c.width)
     {
-        ball.y = c.width
+        ball.y = c.width - ball.h/2
         ball.vy = -ball.vy
     }
     p1.draw()
