@@ -8,6 +8,8 @@ var player = [new Player(), new Player()]
 player[0].pad = new Box();
 player[1].pad = new Box();
 
+console.log(player)
+
 var p1 = new Box();
 p1.w = 20
 p1.h = 150
