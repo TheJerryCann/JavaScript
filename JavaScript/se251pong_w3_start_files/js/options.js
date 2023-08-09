@@ -52,7 +52,7 @@ for(let i = 0; i<u.length; i++)
     u[i].value = player[i].keys
     u[i].addEventListener(`keydown`, (e)=>{
         u[i].value = e.key
-        player[i].u = e.target.value
+        player[i].keys.u = e.target.value
         u[i].nextElementSibling.innerHTML = e.target.value
     })
     u[i].addEventListener(`focus`, (e)=>{
@@ -65,7 +65,7 @@ for(let i = 0; i<d.length; i++)
     d[i].value = player[i].keys
     d[i].addEventListener(`keydown`, (e)=>{
         d[i].value = e.key
-        player[i].d = e.target.value
+        player[i].keys.d = e.target.value
         d[i].nextElementSibling.innerHTML = e.target.value
     })
     d[i].addEventListener(`focus`, (e)=>{
@@ -78,7 +78,7 @@ for(let i = 0; i<s.length; i++)
     s[i].value = player[i].keys
     s[i].addEventListener(`keydown`, (e)=>{
         s[i].value = e.key
-        player[i].s = e.target.value
+        player[i].keys.s = e.target.value
         s[i].nextElementSibling.innerHTML = e.target.value
     })
     s[i].addEventListener(`focus`, (e)=>{
