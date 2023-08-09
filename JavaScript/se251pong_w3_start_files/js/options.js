@@ -24,15 +24,16 @@ function showhide()
 var fill = document.querySelectorAll(`.fill`)
 for(let i = 0; i<fill.length; i++)
 {
-    fill[i].value = player[i].fill
-    fill[i].nextElementSibling.innerHTML = player[i].fill
+    fill[i].value = player[i][fill[i].classList[0]]
+    fill[i].nextElementSibling.innerHTML = player[i][fill[i].classList[0]]
     fill[i].addEventListener(`input`, colorfill)
     function colorfill(e)
     {
+        var word = e.target.classList[0]
         console.dir(e.target.value)
-        player[i].fill = e.target.value
-        player[i].pad.fill = e.target.value
-        e.target.nextElementSibling.innerHTML = player[i].fill
+        player[i][word] = e.target.value
+        player[i].pad[word] = e.target.value
+        e.target.nextElementSibling.innerHTML = player[i][word]
         console.log(fill[i])
     }
     
@@ -100,4 +101,9 @@ for(let i = 0; i<s.length; i++)
     s[i].addEventListener(`focus`, (e)=>{
         currentState = `pause`
     })
+}
+
+var force = document.querySelectorAll(`.force`)
+{
+    
 }
