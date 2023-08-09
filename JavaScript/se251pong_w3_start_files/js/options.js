@@ -59,3 +59,29 @@ for(let i = 0; i<u.length; i++)
         currentState = `pause`
     })
 }
+var d = document.querySelectorAll(`.d`)
+for(let i = 0; i<d.length; i++)
+{
+    d[i].value = player[i].keys
+    d[i].addEventListener(`keydown`, (e)=>{
+        d[i].value = e.key
+        player[i].d = e.target.value
+        d[i].nextElementSibling.innerHTML = e.target.value
+    })
+    d[i].addEventListener(`focus`, (e)=>{
+        currentState = `pause`
+    })
+}
+var s = document.querySelectorAll(`.s`)
+for(let i = 0; i<s.length; i++)
+{
+    s[i].value = player[i].keys
+    s[i].addEventListener(`keydown`, (e)=>{
+        s[i].value = e.key
+        player[i].s = e.target.value
+        s[i].nextElementSibling.innerHTML = e.target.value
+    })
+    s[i].addEventListener(`focus`, (e)=>{
+        currentState = `pause`
+    })
+}
