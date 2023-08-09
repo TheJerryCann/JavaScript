@@ -21,6 +21,22 @@ function showhide()
         . Show the fill's hex code in the output div 
 
 -----------*/
+var fill = document.querySelectorAll(`.fill`)
+for(let i = 0; i<fill.length; i++)
+{
+    fill[i].value = player[i].fill
+    fill[i].nextElementSibling.innerHTML = player[i].fill
+    fill[i].addEventListener(`input`, colorfill)
+    function colorfill(e)
+    {
+        console.dir(e.target.value)
+        player[i].fill = e.target.value
+        player[i].pad.fill = e.target.value
+        e.target.nextElementSibling.innerHTML = player[i].fill
+        console.log(fill[i])
+    }
+    
+}
 
 /*---------
     Program the six key inputs to do the following:
