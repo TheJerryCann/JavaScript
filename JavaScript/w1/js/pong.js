@@ -15,7 +15,6 @@ console.log(player)
 pad[0].w = 20
 pad[0].h = 150
 pad[0].x = 0 + pad[0].w/2
-pad[0].pad 
 
 pad[1].w = 20
 pad[1].h = 150
