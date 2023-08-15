@@ -103,7 +103,18 @@ for(let i = 0; i<s.length; i++)
     })
 }
 
-var force = document.querySelectorAll(`.force`)
+var power = document.querySelectorAll(`.power`)
+for(let i = 0; i<power.length; i++)
 {
-    
+    power[i].value = player[i].power
+    power[i].nextElementSibling.innerHTML = player[i].power
+    power[i].addEventListener(`input`, numbuh)
+    function numbuh(e)
+    {
+        console.dir(e.target.value)
+        player[i].power = e.target.value
+        player[i].pad.power = e.target.value
+        e.target.nextElementSibling.innerHTML = player[i].power
+        console.log(power[i])
+    }
 }
