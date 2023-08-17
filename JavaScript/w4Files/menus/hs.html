@@ -17,11 +17,11 @@
         <section id="content">
             <div id="menus">
             <h2>HIGH SCORES</h2>
-            <!-- This is what your final html will look like
+
                 <div id="high-scores">
                     //scores go here.
                 </div>
-            -->
+            
             </div>
         </section>
         <section class="blank"></section>
@@ -33,14 +33,16 @@
         ]
         
         
-        var menus = document.querySelector(`#menus`);
+
         var message = "";
-        for (let i = 0; i<highScoreList; i++)
+        for (let i = 0; i<highScoreList.length; i++)
         {
-            message[i].value += "First Name" + p1.name[i] + "Score" + p1.score[i]
+            message += "First Name: " + highScoreList[i].name + " Score: " + highScoreList[i].score 
             
         }
-
+        document.querySelector(`#high-scores`).innerHTML = message
+        var hs = document.querySelector(`#high-scores`)
+        
         
        
 
